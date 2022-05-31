@@ -53,9 +53,6 @@ self.addEventListener('activate', function (e) {
                 if (cacheKeeplist.indexOf(key) === -1) {
                     console.log('deleting cache : ' + keyList[i]);
                     return caches.delete(keyList[i]);
-                }else {
-                    console.log('file is not cached, fetching : ' + e.request.url)
-                    return fetch(e.request)
                 }
             }));
         })
